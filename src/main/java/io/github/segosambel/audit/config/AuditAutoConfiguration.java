@@ -5,11 +5,11 @@ import io.github.segosambel.audit.store.AuditStore;
 import io.github.segosambel.audit.store.InMemoryAuditStore;
 import io.github.segosambel.audit.support.AuditContextResolver;
 import io.github.segosambel.audit.support.DefaultAuditContextResolver;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-@AutoConfiguration
+@Configuration
 public class AuditAutoConfiguration {
 
     /**
