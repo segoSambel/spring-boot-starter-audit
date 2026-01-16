@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>io.github.segosambel</groupId>
 	<artifactId>spring-boot-starter-audit</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0</version>
 	<packaging>jar</packaging>
 
 	<name>Spring Boot Audit Starter</name>
@@ -87,7 +86,7 @@
 		<connection>scm:git:https://github.com/segosambel/spring-boot-starter-audit.git</connection>
 		<developerConnection>scm:git:https://github.com/segosambel/spring-boot-starter-audit.git</developerConnection>
 		<url>https://github.com/segosambel/spring-boot-starter-audit</url>
-		<tag>HEAD</tag>
+		<tag>v0.1.0</tag>
 	</scm>
 
 </project>
