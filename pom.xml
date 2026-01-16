@@ -14,6 +14,8 @@
 	<properties>
 		<java.version>17</java.version>
 		<spring-boot.version>3.5.9</spring-boot.version>
+		<maven-compiler.version>3.14.1</maven-compiler.version>
+		<maven-release.version>3.0.1</maven-release.version>
 	</properties>
 
 	<dependencyManagement>
@@ -57,6 +59,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler.version}</version>
 				<configuration>
 					<release>${java.version}</release>
 				</configuration>
@@ -64,6 +67,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot.version}</version>
 				<configuration>
 					<skip>true</skip>
 				</configuration>
@@ -71,12 +75,19 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>3.0.1</version>
+				<version>${maven-release.version}</version>
 				<configuration>
 					<tagNameFormat>v@{project.version}</tagNameFormat>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+
+	<scm>
+		<connection>scm:git:https://github.com/segosambel/spring-boot-starter-audit.git</connection>
+		<developerConnection>scm:git:https://github.com/segosambel/spring-boot-starter-audit.git</developerConnection>
+		<url>https://github.com/segosambel/spring-boot-starter-audit</url>
+		<tag>HEAD</tag>
+	</scm>
 
 </project>
