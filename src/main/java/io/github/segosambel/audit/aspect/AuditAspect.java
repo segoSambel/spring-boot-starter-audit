@@ -4,6 +4,7 @@ import io.github.segosambel.audit.annotation.Auditable;
 import io.github.segosambel.audit.model.AuditEvent;
 import io.github.segosambel.audit.model.AuditResult;
 import io.github.segosambel.audit.store.AuditStore;
+import io.github.segosambel.audit.support.AuditContextResolver;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -15,9 +16,11 @@ import java.util.Map;
 public class AuditAspect {
 
     private final AuditStore auditStore;
+    private final AuditContextResolver contextResolver;
 
-    public AuditAspect(AuditStore auditStore) {
+    public AuditAspect(AuditStore auditStore, AuditContextResolver contextResolver) {
         this.auditStore = auditStore;
+        this.contextResolver = contextResolver;
     }
 
     @Around("@annotation(Auditable)")
@@ -61,6 +64,8 @@ public class AuditAspect {
                 .action(auditable.action())
                 .category(auditable.category())
                 .result(result)
+                .actor(contextResolver.resolveActor())
+                .source(contextResolver.resolveSource())
                 .metadata(metadata.isEmpty() ? null : metadata)
                 .build();
     }
